@@ -5,14 +5,15 @@
   "main": "src/server.js",
   "scripts": {
     "test": "node src/server.js",
-    "start": "node src/server.js"
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js"
   },
   "engines": {
     "node": "13.x"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AlvaroYmagawa/JustParty-Backend.git"
+    "url": "git+https://github.com/Smart-Way-Software/JustParty-Backend.git"
   },
   "keywords": [
     "api",
@@ -21,9 +22,9 @@
   "author": "Álvaro Ymagawa, Leandro da Silva",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/AlvaroYmagawa/JustParty-Backend/issues"
+    "url": "https://github.com/Smart-Way-Software/JustParty-Backend/issues"
   },
-  "homepage": "https://github.com/AlvaroYmagawa/JustParty-Backend#readme",
+  "homepage": "https://github.com/Smart-Way-Software/JustParty-Backend#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
@@ -35,5 +36,9 @@
     "pg": "^7.12.1",
     "sequelize": "^5.21.2",
     "yup": "^0.27.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2",
+    "sequelize-cli": "^5.5.1"
   }
 }
