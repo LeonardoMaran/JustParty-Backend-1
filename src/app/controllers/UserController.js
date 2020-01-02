@@ -43,12 +43,25 @@ class UserController {
       include: [
         {
           model: File,
-          attributes: ['url', 'name', 'path'],
+          attributes: [
+            'url',
+            'name',
+            'path'
+          ],
         },
       ],
     });
 
-    const { name, email, adress, contact, File: file, description, likes, dislikes } = user;
+    const {
+      name,
+      email,
+      adress,
+      contact,
+      File: file,
+      description,
+      likes,
+      dislikes
+    } = user;
 
     return res.json({
       name,
@@ -83,7 +96,10 @@ class UserController {
 
     const user = await User.findByPk(req.userId);
 
-    const { newEmail, oldPassword } = req.body;
+    const {
+      newEmail,
+      oldPassword
+    } = req.body;
 
     // Email validation
     if (newEmail && newEmail !== user.email) {
@@ -101,7 +117,15 @@ class UserController {
 
     await user.update(req.body);
 
-    const { id, name, email, promoter, adress, contact, File: file } = await User.findByPk(req.userId, {
+    const {
+      id,
+      name,
+      email,
+      promoter,
+      adress,
+      contact,
+      File: file
+    } = await User.findByPk(req.userId, {
       include: [
         {
           model: File,

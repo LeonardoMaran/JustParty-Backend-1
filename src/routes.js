@@ -16,13 +16,15 @@ const CategoryController = require('./app/controllers/CategoryController');
 const DefaultCategoryController = require('./app/controllers/DefaultCategoryController');
 
 const routes = express.Router();
-const cors = Cors();
 
 const upload = multer(multerConfig);
 
 // Middleware to enable the same origin access the server
-routes.use(function (req, res, next) {
-  res.header('Access-Control-Allow-Origin', '*');
+routes.use((req, res, next) => {
+  res.header(
+    'Access-Control-Allow-Origin',
+    '*'
+  );
   res.header(
     'Access-Control-Allow-Headers',
     'Origin, X-Requested-With, Content-Type, Accept'
@@ -78,7 +80,6 @@ routes.get('/categories/:eventId', CategoryController.index);
 routes.post('/defaultCategories', DefaultCategoryController.store);
 routes.get('/defaultCategories/:defaultCategoryId', DefaultCategoryController.index);
 routes.get('/defaultCategories', DefaultCategoryController.indexAll);
-
 
 
 module.exports = routes;

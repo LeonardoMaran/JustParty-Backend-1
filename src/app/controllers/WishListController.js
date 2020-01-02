@@ -1,9 +1,7 @@
 /* eslint-disable class-methods-use-this */
-const { Op } = require('sequelize');
 const Event = require('../models/Event');
 const Wishlist = require('../models/WishList');
 const File = require('../models/File');
-const User = require('../models/User');
 
 class WishlistController {
   async store(req, res) {
@@ -22,7 +20,6 @@ class WishlistController {
         event_id,
         user_id: req.userId,
       },
-
     });
 
     if (eventInList) {

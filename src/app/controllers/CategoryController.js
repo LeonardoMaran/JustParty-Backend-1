@@ -34,7 +34,7 @@ class CategoryController {
         model: DefaultCategory,
         attributes: ['name', 'color'],
       }]
-    })
+    });
 
     return res.json(categories);
   }

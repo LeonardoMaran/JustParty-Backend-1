@@ -13,7 +13,11 @@ class SessionController {
       include: [
         {
           model: File,
-          attributes: ['id', 'path', 'url'],
+          attributes: [
+            'id',
+            'path',
+            'url'
+          ],
         },
       ],
     });

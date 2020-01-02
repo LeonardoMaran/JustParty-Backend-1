@@ -1,5 +1,4 @@
 /* eslint-disable class-methods-use-this */
-const { isBefore, parseISO } = require('date-fns');
 const { Op } = require('sequelize');
 const Event = require('../models/Event');
 const User = require('../models/User');
@@ -34,18 +33,29 @@ class FilterController {
         {
           model: User,
           as: 'promoter',
-          attributes: ['id', 'name'],
+          attributes: [
+            'id',
+            'name'
+          ],
           include: [
             {
               model: File,
-              attributes: ['id', 'path', 'url'],
+              attributes: [
+                'id',
+                'path',
+                'url'
+              ],
             },
           ],
         },
         {
           model: File,
           as: 'banner',
-          attributes: ['id', 'path', 'url'],
+          attributes: [
+            'id',
+            'path',
+            'url'
+          ],
         },
       ],
     });
@@ -140,7 +150,7 @@ class FilterController {
           ],
         }
       ]
-    })
+    });
 
     return res.json(events);
   }

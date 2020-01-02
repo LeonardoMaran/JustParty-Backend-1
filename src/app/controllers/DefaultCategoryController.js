@@ -39,7 +39,7 @@ class DefaultCategoryController {
       where: {
         id: req.params.defaultCategoryId,
       }
-    })
+    });
 
     const { name, color } = defaultCategory;
 
@@ -56,7 +56,7 @@ class DefaultCategoryController {
         color: category.color,
       })
 
-    })
+    });
 
     return res.json(formattedCategories);
   }
